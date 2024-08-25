@@ -10,7 +10,7 @@ function Auth(props) {
   const navigate = useNavigate();
   const [headerData, setHeaderData] = useState({
     header: "WELCOME BACK",
-    subHeader: "Log into your account",
+    subHeader: "Log into your account ",
   });
 
   const [flowStep, setFlowStep] = useState("login");
