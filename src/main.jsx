@@ -13,7 +13,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/login",
-        element: <Auth />,
+        element: (
+          <div style={{ height: "100vh" }}>
+            <Auth />
+          </div>
+        ),
       },
       {
         path: "/home-feed",
