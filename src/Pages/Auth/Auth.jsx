@@ -1,7 +1,7 @@
 import React, { startTransition, useState } from "react";
 import Login from "../../Widgets/Login/login";
 import AuthWrapper from "../../Wrappers/Auth/Auth";
-import SignUp from "../../Widgets/SignUp/signUp";
+import SignUp from "../../Widgets/SignUp/SignUp";
 import "./Auth.css";
 import ViewTransition from "../../Wrappers/ViewTransition/ViewTransition";
 import { useNavigate } from "react-router-dom";
