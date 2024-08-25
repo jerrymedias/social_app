@@ -4,8 +4,10 @@ import AuthWrapper from "../../Wrappers/Auth/Auth";
 import SignUp from "../../Widgets/SignUp/signUp";
 import "./Auth.css";
 import ViewTransition from "../../Wrappers/ViewTransition/ViewTransition";
+import { useNavigate } from "react-router-dom";
 
 function Auth(props) {
+  const navigate = useNavigate();
   const [headerData, setHeaderData] = useState({
     header: "WELCOME BACK",
     subHeader: "Log into your account",
@@ -53,7 +55,7 @@ function Auth(props) {
           <SignUp
             signUpHandler={(signUpData) => {
               //navigate to home page and set signup in local store
-
+              navigate("/home-feed");
               startTransition(() => {
                 localStorage.setItem("username", signUpData.username);
                 localStorage.setItem("email", signUpData.email);

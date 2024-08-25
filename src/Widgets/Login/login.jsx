@@ -30,7 +30,6 @@ function Login(props) {
             setPassword(e.target.value);
           }}
           toggleEye={() => {
-            debugger;
             setShowPassword(!showPassword);
           }}
         />

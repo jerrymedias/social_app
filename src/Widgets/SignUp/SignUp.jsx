@@ -13,7 +13,7 @@ function SignUp(props) {
     <div className="login">
       <div className="mt-12">
         <InputFields
-          type="text"
+          type="email"
           label="Email"
           placeholder="Enter your email"
           value={email}
