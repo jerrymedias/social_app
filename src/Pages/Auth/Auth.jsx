@@ -32,7 +32,7 @@ function Auth(props) {
                 email === loginData.username
               ) {
                 if (password === loginData.password) {
-                  //navigate to home page
+                  props.crossIconHandler?.();
                 } else {
                   alert("Wrong password");
                 }
@@ -54,8 +54,8 @@ function Auth(props) {
         {flowStep === "signUp" && (
           <SignUp
             signUpHandler={(signUpData) => {
+              props.crossIconHandler?.();
               //navigate to home page and set signup in local store
-              navigate("/home-feed");
               startTransition(() => {
                 localStorage.setItem("username", signUpData.username);
                 localStorage.setItem("email", signUpData.email);

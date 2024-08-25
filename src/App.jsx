@@ -7,9 +7,9 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem("username") && localStorage.getItem("password")) {
-      navigate("/home-feed");
+      navigate("/social_app/home-feed");
     } else {
-      navigate("/login");
+      navigate("/social_app/login");
     }
   }, []);
 

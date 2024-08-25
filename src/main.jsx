@@ -8,11 +8,11 @@ import HomeFeed from "./Pages/HomeFeed/HomeFeed.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/social_app/",
     element: <App />,
     children: [
       {
-        path: "/login",
+        path: "/social_app/login",
         element: (
           <div style={{ height: "100vh" }}>
             <Auth />
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/home-feed",
+        path: "/social_app/home-feed",
         element: <HomeFeed />,
       },
     ],
