@@ -54,7 +54,7 @@ function Auth(props) {
         {flowStep === "signUp" && (
           <SignUp
             signUpHandler={(signUpData) => {
-              props.crossIconHandler?.();
+              props.showCloseCta ? props.crossIconHandler?.() : navigate("/social_app/home-feed")
               //navigate to home page and set signup in local store
               startTransition(() => {
                 localStorage.setItem("username", signUpData.username);
