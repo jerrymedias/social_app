@@ -1,0 +1,18 @@
+.AuthWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  &.bckColor {
+    background-color: #27282c;
+  }
+  &.border {
+    border: 2px solid #5c5c5c;
+  }
+  .wl-color {
+    color: #6b6c70;
+  }
+  .lg-ac {
+    color: #ffffff;
+  }
+}

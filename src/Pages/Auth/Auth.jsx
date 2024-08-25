@@ -1,0 +1,79 @@
+import React, { startTransition, useState } from "react";
+import Login from "../../Widgets/Login/login";
+import AuthWrapper from "../../Wrappers/Auth/Auth";
+import SignUp from "../../Widgets/SignUp/signUp";
+import "./Auth.css";
+import ViewTransition from "../../Wrappers/ViewTransition/ViewTransition";
+
+function Auth(props) {
+  const [headerData, setHeaderData] = useState({
+    header: "WELCOME BACK",
+    subHeader: "Log into your account",
+  });
+
+  const [flowStep, setFlowStep] = useState("login");
+
+  return (
+    <div className="">
+      <AuthWrapper
+        {...headerData}
+        showCloseCta={props.showCloseCta}
+        crossIconHandler={props.crossIconHandler}>
+        <ViewTransition transitionName="slide-in-out">
+          {flowStep === "login" && (
+            <Login
+              loginHanlder={(loginData) => {
+                const username = localStorage.getItem("username");
+                const email = localStorage.getItem("email");
+                const password = localStorage.getItem("password");
+                if (
+                  username === loginData.username ||
+                  email === loginData.username
+                ) {
+                  if (password === loginData.password) {
+                    //navigate to home page
+                  } else {
+                    alert("Wrong password");
+                  }
+                } else {
+                  alert(
+                    `User ${loginData.username} is not yet registered with us. Register now!!`
+                  );
+                }
+              }}
+              registerHandler={() => {
+                setHeaderData({
+                  header: "SIGN UP",
+                  subHeader: "Create an account to continue",
+                });
+                setFlowStep("signUp");
+              }}
+            />
+          )}
+          {flowStep === "signUp" && (
+            <SignUp
+              signUpHandler={(signUpData) => {
+                //navigate to home page and set signup in local store
+
+                startTransition(() => {
+                  localStorage.setItem("username", signUpData.username);
+                  localStorage.setItem("email", signUpData.email);
+                  localStorage.setItem("password", signUpData.password);
+                });
+              }}
+              loginCtaHandler={() => {
+                setHeaderData({
+                  header: "WELCOME BACK",
+                  subHeader: "Log into your account",
+                });
+                setFlowStep("login");
+              }}
+            />
+          )}
+        </ViewTransition>
+      </AuthWrapper>
+    </div>
+  );
+}
+
+export default Auth;

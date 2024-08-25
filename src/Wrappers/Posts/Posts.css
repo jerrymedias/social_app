@@ -1,0 +1,6 @@
+.PostsWrapper {
+  
+  &.bckColor {
+    background-color: #27292d;
+  }
+}

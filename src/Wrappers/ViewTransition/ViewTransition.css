@@ -1,0 +1,39 @@
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-100px);
+  }
+}
+
+::view-transition-old(slide-in-out) {
+  animation: 250ms slide-out;
+}
+
+::view-transition-new(slide-in-out) {
+  animation: 500ms slide-in;
+}
+
+::view-transition-old(fade-in-out) {
+  animation: 250ms fade-out;
+}
+
+::view-transition-new(fade-in-out) {
+  animation: 500ms fade-in;
+}

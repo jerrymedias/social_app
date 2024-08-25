@@ -1,0 +1,13 @@
+.cp-header {
+  color: #c5c7ca;
+}
+.post-icon {
+  z-index: 99;
+  background: #27292d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 29%;
+  left: 12px;
+}
